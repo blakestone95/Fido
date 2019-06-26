@@ -1,6 +1,6 @@
 {
   "name": "react-fido",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React utility for managing native browser Fetch API calls.",
   "main": "dist/index.js",
   "files": [
