@@ -1,0 +1,76 @@
+{
+  "name": "react-fido",
+  "version": "0.0.1",
+  "description": "A React utility for managing native browser Fetch API calls.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "npm run clean && npm run build:js",
+    "build:dev": "npm run clean && npm run build:js -- --source-maps",
+    "build:js": "babel src --out-dir dist",
+    "lint": "eslint --ext js --ext jsx . || exit 0",
+    "clean": "rimraf dist",
+    "watch": "watch \"npm run build:dev\" src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakestone95/Fido.git"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "fetch",
+    "hooks"
+  ],
+  "author": "Blake Sawyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blakestone95/Fido/issues"
+  },
+  "homepage": "https://github.com/blakestone95/Fido#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,css,less,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.2",
+    "core-js": "^3.1.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "husky": "^2.5.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "watch": "^1.0.2"
+  }
+}
